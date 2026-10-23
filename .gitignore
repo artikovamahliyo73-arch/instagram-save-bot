@@ -2,6 +2,9 @@
 .env
 *.env
 cookies.txt
+*.db
+*.sqlite3
+
 
 # Python virtual environment
 .venv/
