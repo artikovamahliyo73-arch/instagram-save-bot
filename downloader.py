@@ -70,12 +70,12 @@ def _sync_download(url: str) -> Dict[str, Any]:
         'no_warnings': True,
         'merge_output_format': 'mp4',
         'noplaylist': True,
-        'socket_timeout': 15,
+        'socket_timeout': 30,
+        'retries': 5,
+        'fragment_retries': 5,
+        'extractor_retries': 3,
         'ffmpeg_location': str(SCRIPTS_DIR),
-        # Tezlikni oshirish uchun sozlamalar:
-        'http_chunk_size': 10485760,          # 10 MB bo'laklarda yuklash (CDN tezlik cheklovini aylanib o'tish)
-        'concurrent_fragment_downloads': 8,   # Bir vaqtning o'zida 8 ta bo'lak yuklash
-        'buffersize': 1024 * 1024,            # 1 MB bufer
+        'concurrent_fragment_downloads': 8,
         'http_headers': {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
